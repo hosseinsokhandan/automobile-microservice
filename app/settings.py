@@ -5,6 +5,7 @@ from typing import Optional, Any, Dict, List
 
 class Settings(BaseSettings):
     DISCOVERY_URL: str
+    SERVICE_NAME: str
     
     DB_SCHEME: str = Field(default="postgres")
     DB_HOST: str = Field(default="postgres")
