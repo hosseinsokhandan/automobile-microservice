@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
-    command: uvicorn main:app --reload --port 80
+    command: uvicorn main:app --reload --host 0.0.0.0 --port 80
     volumes:
       - ./app/:/usr/src/app/
       - ./.env/:/usr/src/app/.env
@@ -19,7 +19,7 @@ services:
       traefik: {}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN}`)"
+      - "traefik.http.routers.${SERVICE_NAME}.rule=PathPrefix(`/${SERVICE_NAME}`)"
 
 networks:
   traefik:
