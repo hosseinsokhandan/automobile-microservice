@@ -7,5 +7,8 @@ class AutomobileModel(models.Model):
     manufacturer = fields.CharField(max_length=64)
     type = fields.CharField(max_length=64)
 
+    class Meta:
+        model = "automobile"
+
     def __str__(self) -> str:
         return self.model

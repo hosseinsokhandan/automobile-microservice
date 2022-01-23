@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     DATABASE_URL: Optional[PostgresDsn] = None
 
     MODELS: List = [
-        "models.Automobile",
+        "models",
         # "models.Part",
         "aerich.models",  # aerich
     ]
