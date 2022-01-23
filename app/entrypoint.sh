@@ -11,4 +11,7 @@ then
     echo "PostgreSQL started"
 fi
 
+
+aerich upgrade
+
 exec "$@"
