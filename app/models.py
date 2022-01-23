@@ -8,7 +8,7 @@ class AutomobileModel(models.Model):
     type = fields.CharField(max_length=64)
 
     class Meta:
-        model = "automobile"
+        table = "automobile"
 
     def __str__(self) -> str:
         return self.model
