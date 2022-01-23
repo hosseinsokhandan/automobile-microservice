@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
   app:
-    container_name: ${COMPOSE_PROJECT_NAME}-service
+    container_name: ${SERVICE_NAME}-service
     build: 
       context: .
       dockerfile: Dockerfile
@@ -16,7 +16,7 @@ services:
       traefik: {}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${COMPOSE_PROJECT_NAME}.${DOMAIN}`)"
+      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN}`)"
 
 networks:
   traefik:
